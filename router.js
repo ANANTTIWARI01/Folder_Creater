@@ -6,6 +6,9 @@ const router = express.Router()
 router.post("/folder", function createFolder(req, res) {
     try {
         const { inputs } = req.body
+
+        if(!inputs) return res.status(400).json({message:"Input not found"})
+
         for (let i = 0; i < inputs.length; i++) {
             const folderName = `C:\\Users\\Anant\\OneDrive\\Desktop\\Folder making Project\\Backend\\Anant_${i}`;
             const fileName = `C:\\Users\\Anant\\OneDrive\\Desktop\\Folder making Project\\Backend\\Anant_${i}/${inputs[i]}.txt`
