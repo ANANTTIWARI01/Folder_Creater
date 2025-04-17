@@ -8,8 +8,8 @@ import router from "./router.js"
 
 
 const corsOptions = {
-    origin: `http://localhost:5173`,
-    credentials: true,
+    origin: `*`,
+    credentials:false,
     methods: ["GET", "POST", "PATCH", "DELETE", "PUT", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }
