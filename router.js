@@ -5,10 +5,10 @@ const router = express.Router()
 
 router.post("/folder", function createFolder(req, res) {
     try {
-        const { number } = req.body
-        for (let i = 0; i < number; i++) {
+        const { inputs } = req.body
+        for (let i = 0; i < inputs.length; i++) {
             const folderName = `C:\\Users\\Anant\\OneDrive\\Desktop\\Folder making Project\\Backend\\Anant_${i}`;
-            const fileName = `C:\\Users\\Anant\\OneDrive\\Desktop\\Folder making Project\\Backend\\Anant_${i}/example.txt`
+            const fileName = `C:\\Users\\Anant\\OneDrive\\Desktop\\Folder making Project\\Backend\\Anant_${i}/${inputs[i]}.txt`
             const data = 'hello'
             if (!fs.existsSync(folderName)) {
                 fs.mkdirSync(folderName, { recursive: true });
