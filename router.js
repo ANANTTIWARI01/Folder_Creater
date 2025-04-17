@@ -3,10 +3,11 @@ import express from "express"
 import fs from "fs"
 const router = express.Router()
 
-router.post("/folder", function createFolder(req, res) {
+router.post("/folder", (req, res)=> {
     try {
         const { inputs } = req.body
-
+        console.log(req.body);
+        
         if(!inputs) return res.status(400).json({message:"Input not found"})
 
         for (let i = 0; i < inputs.length; i++) {

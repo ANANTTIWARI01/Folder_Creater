@@ -1,15 +1,14 @@
 import express from "express"
 import cors from 'cors';
+import router from "./router.js"
 
 const app = express()
 const PORT = 8080
 app.use(express.json())
-import router from "./router.js"
-
 
 const corsOptions = {
     origin: `*`,
-    credentials:false,
+    credentials: true,
     methods: ["GET", "POST", "PATCH", "DELETE", "PUT", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }
